@@ -1,0 +1,20 @@
+/* eslint-disable prettier/prettier */
+export const colors = {
+  primaryColor: '#502C1E',
+  secondaryColor: '#BB6125',
+  AnotherSecondaryColor: '#0099A8',
+  OTP_Splash_Color: '#F3F4F61A',
+  TextColor: '#212529',
+  CaptionColor: '#8A8A8A',
+  IconColor: '#505050',
+  successColor: '#00AB6F',
+  PendingColor: '#F5AB35',
+  errorColor: '#EF5448',
+  whiteColor: '#FFFFFF',
+  WelcomeCardText: '#1A3353',
+  GreyWelcomeBack: '#AEB2BF1C',
+  CaptionGrey: '#455560',
+  Black: '#000000',
+  BottomGrey: '#E6EBF1',
+  placeHolderColor: '#AAB3B7',
+};
