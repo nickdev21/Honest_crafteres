@@ -237,25 +237,25 @@ android {
         staging {
             resValue "string", "app_name", "HONEST CRAFTERS Staging"
             applicationIdSuffix ".stag"
-            //  manifestPlaceholders = [
-            //         appIcon: "@mipmap/ic_launcher_foreground_gray",
-            //         appIconRound: "@mipmap/ic_launcher_foreground_gray"
-            // ]
+             manifestPlaceholders = [
+                    appIcon: "@mipmap/ic_launcher_foreground_gray",
+                    appIconRound: "@mipmap/ic_launcher_foreground_gray"
+            ]
         }
         dev {
             resValue "string", "app_name", "HONEST CRAFTERS Dev"
             applicationIdSuffix ".dev"
-            // manifestPlaceholders = [
-            //         appIcon: "@mipmap/ic_launcher_foreground_gray",
-            //         appIconRound: "@mipmap/ic_launcher_foreground_gray"
-            // ]
+            manifestPlaceholders = [
+                    appIcon: "@mipmap/ic_launcher_foreground_gray",
+                    appIconRound: "@mipmap/ic_launcher_foreground_gray"
+            ]
         }
         prod {
             resValue "string", "app_name", "HONEST CRAFTERS"
-            //  manifestPlaceholders = [
-            //         appIcon: " @mipmap/ic_launcher",
-            //         appIconRound: "@mipmap/ic_launcher_round"
-            // ]
+             manifestPlaceholders = [
+                    appIcon: " @mipmap/ic_launcher",
+                    appIconRound: "@mipmap/ic_launcher_round"
+            ]
            
         }
     }

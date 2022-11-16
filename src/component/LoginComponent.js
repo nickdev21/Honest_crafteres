@@ -1,27 +1,55 @@
 /* eslint-disable prettier/prettier */
-import { View, StyleSheet, Text, StatusBar, ImageBackground, Image, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
-import React, { useState } from 'react';
+import { View, StyleSheet, Text, StatusBar, ImageBackground, TextInput, KeyboardAvoidingView, Platform, Keyboard } from 'react-native';
+import React, { useEffect, useState } from 'react';
 import { colors } from '../assets/colors';
 import Images from '../assets/Images';
-import { Call_Icon, SALESIcon } from '../assets/Icons';
+import { Call_Icon } from '../assets/Icons';
 import { windowHeight, windowWidth } from '../utils/Dimension';
 import FormButton from './FormButton';
 import fonts from '../assets/fonts';
 import OTPInputFeild from './OTPInputFeild';
+import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
+import { useNavigation } from '@react-navigation/native';
 
-const LoginComponent = () => {
+const LoginComponent = ({ data }) => {
 
-    const [code, setcode] = useState("")
-    const [pinReady, setpinReady] = useState(false)
+    const [code, setcode] = useState('');
+    const [pinReady, setpinReady] = useState(false);
+    const [mobileValidate, setmobileValidate] = useState(false);
+    const [telephone, settelephone] = useState('');
     const MAX_CODE_LENGTH = 4;
+
+    let navigation = useNavigation();
+
+
+
+    const mobilevalidate = (text) => {
+        const reg = /^[0]?[789]\d{9}$/;
+        if (reg.test(text) === false) {
+            setmobileValidate(false);
+            settelephone(text);
+            return false;
+        } else {
+            setmobileValidate(true);
+            settelephone(text);
+            return true;
+        }
+    };
+
+    useEffect(() => {
+        console.log(mobileValidate, 'mobileValidate');
+        console.log(telephone, 'telephone');
+        console.log(pinReady, 'pinReady');
+    }, [mobileValidate, pinReady, telephone]);
+
 
     return (
         <>
             <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-                style={{ flex: 1 }} >
+                style={styles.KeybaordStyle} >
                 <StatusBar barStyle="light-content" backgroundColor="transparent" translucent={true} />
 
-                <View style={styles.LoginWrapper} >
+                <Pressable style={styles.LoginWrapper} onPress={Keyboard.dismiss} >
                     <View style={styles.UpperWrapper} >
                         <View style={styles.EightStyle} >
                             {/* <Image source={Images.loginBackPNG} style={styles.ImageStyle} resizeMode="cover" /> */}
@@ -30,41 +58,54 @@ const LoginComponent = () => {
                         <View style={styles.EmptyView} />
                         <View style={styles.CenterIcon} >
                             {/* <View style={styles.CircleView} /> */}
-                            <SALESIcon width={'100%'} height={'70%'} />
+                            {/* <SALESIcon width={'100%'} height={'70%'} /> */}
+                            <data.CenterIcon width={'100%'} height={'70%'} />
                         </View>
-                        <Text style={styles.TextStyle}>Sales</Text>
+                        {/* <Text style={styles.TextStyle}>Sales</Text> */}
                     </View>
                     <View style={styles.LowerWrapper} >
                         <View style={styles.LowerFirst} >
                             <View style={styles.TextView}>
-                                <Text style={styles.loginText}>Login</Text>
-                                <Text style={styles.LoginDetailText} >Please enter your phone number below to get started.</Text>
+                                <Text style={styles.loginText}>{data?.PageHeading}</Text>
+                                <Text style={styles.LoginDetailText} >{data?.PageSubHeading}</Text>
                             </View>
-                            {/* <View style={styles.InputVIew} >
-                                <Call_Icon width={windowWidth / 15} height={windowHeight / 15} />
+                            {data?.OTPLogin === false ?
 
-                                <TextInput
-                                    style={styles.TextInputStyles}
-                                    placeholder="Your Phone Number"
-                                    placeholderTextColor={colors.placeHolderColor}
-                                    // onChangeText={text => setnumberOfCarpets(text)}
-                                    autoCorrect={false}
-                                    keyboardType="number-pad"
-                                    autoCapitalize="none"
-                                />
-                            </View> */}
-                            <View style={styles.InputVIew} >
-                                <OTPInputFeild setpinReady={setpinReady} code={code} setcode={setcode} maxLength={MAX_CODE_LENGTH} />
-                            </View>
+                                <View style={styles.InputVIew} >
+                                    <Call_Icon width={windowWidth / 15} height={windowHeight / 15} />
+
+                                    <TextInput
+                                        style={styles.TextInputStyles}
+                                        placeholder="Your Phone Number"
+                                        placeholderTextColor={colors.placeHolderColor}
+                                        onChangeText={text => mobilevalidate(text)}
+                                        autoCorrect={false}
+                                        keyboardType="number-pad"
+                                        autoCapitalize="none"
+                                    />
+                                </View>
+                                :
+                                <>
+                                    <View style={styles.InputVIew} >
+                                        <OTPInputFeild setpinReady={setpinReady} code={code} setcode={setcode} maxLength={MAX_CODE_LENGTH} />
+                                    </View>
+                                    <View style={styles.TermsTextView} >
+                                        <Text style={styles.TermsText}>Don’t reccive OTP? <Text style={styles.NestedTextNoUnderLine} >Request again</Text></Text>
+                                    </View>
+                                </>
+                            }
+
                         </View>
                         <View style={styles.LowerSecond} >
-                            <FormButton buttonTitle="Continue" onPress={() => { }} style={styles.ButtonStyle} />
+                            <FormButton
+                                disabled={!pinReady && !mobileValidate}
+                                buttonTitle={data?.ButtonTitle} onPress={() => { navigation.navigate(data?.NavigationScreen); }} style={(!pinReady && !mobileValidate) ? styles.ButtonStyle : null} />
                             <View style={styles.TermsTextView} >
                                 <Text style={styles.TermsText}>By continuing, you agree to the honest crafters <Text style={styles.NestedText} >terms & services</Text></Text>
                             </View>
                         </View>
                     </View>
-                </View>
+                </Pressable>
             </KeyboardAvoidingView>
         </>
     );
@@ -74,6 +115,9 @@ export default LoginComponent;
 
 
 const styles = StyleSheet.create({
+    KeybaordStyle: {
+        flex: 1,
+    },
     LoginWrapper: {
         flex: 1,
         backgroundColor: colors.whiteColor,
@@ -179,7 +223,7 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         borderWidth: 1,
         borderColor: 'transparent',
-        borderBottomColor: colors.BottomGrey,
+        // borderBottomColor: colors.BottomGrey,
         width: '100%',
         marginBottom: 10,
     },
@@ -212,5 +256,15 @@ const styles = StyleSheet.create({
         letterSpacing: 0.5,
         fontFamily: fonts.PoppinsSemiBold,
         color: colors.secondaryColor,
+    },
+    NestedTextNoUnderLine: {
+        fontSize: 12,
+        lineHeight: 14,
+        letterSpacing: 0.5,
+        fontFamily: fonts.PoppinsSemiBold,
+        color: colors.secondaryColor,
+    },
+    ButtonStyle: {
+        backgroundColor: 'rgba(0, 153, 168, 0.6)',
     },
 });

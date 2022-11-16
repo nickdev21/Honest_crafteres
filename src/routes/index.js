@@ -6,7 +6,7 @@ import AuthNavigation from './AuthNavigation';
 
 const index = () => {
 
-    const [user, setuser] = useState(false);
+    const [user, setuser] = useState(true);
     return (
         <NavigationContainer>
             {user ? <AppNavigations /> : <AuthNavigation />}
