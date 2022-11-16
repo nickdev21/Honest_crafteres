@@ -17,4 +17,6 @@ export const colors = {
   Black: '#000000',
   BottomGrey: '#E6EBF1',
   placeHolderColor: '#AAB3B7',
+  TileFirst: '#FEF4ED',
+  TileSecond: '#EEFDFF',
 };

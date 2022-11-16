@@ -1,31 +1,24 @@
 /* eslint-disable prettier/prettier */
-import { View, Text, StyleSheet, Image } from 'react-native';
 import React from 'react';
-import { colors } from '../../assets/colors';
 import LoginComponent from '../../component/LoginComponent';
+import NavigationStrings from '../../routes/NavigationStrings';
+import { HCLOGO_Icon } from '../../assets/Icons';
 
 const Login = () => {
+
+
+    let data = {
+        OTPLogin: false,
+        NavigationScreen: NavigationStrings.OTP_LOGIN_SCREEN,
+        CenterIcon: HCLOGO_Icon,
+        ButtonTitle: 'Continue',
+        PageHeading: 'LOGIN',
+        PageSubHeading: 'Please enter your phone number below to get started.',
+    };
+
     return (
-        <LoginComponent />
+        <LoginComponent data={data} />
     );
 };
 
 export default Login;
-
-
-const styles = StyleSheet.create({
-    LoginWrapper: {
-        flex: 1,
-        backgroundColor: colors.whiteColor,
-    },
-    UpperWrapper: {
-        backgroundColor: 'pink',
-        height: '40%',
-        width: '100%',
-    },
-    LowerWrapper: {
-        backgroundColor: 'yellow',
-        height: '60%',
-        width: '100%',
-    },
-});
