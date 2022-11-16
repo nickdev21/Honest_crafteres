@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { StyleSheet } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import Routes from './src/routes';
 import { colors } from './src/assets/colors';
@@ -19,7 +19,9 @@ const App = () => {
   // Routes
   return (
     <SafeAreaProvider style={styles.container}>
+      <SafeAreaView style={styles.container} >
       {splash ? <SplashMain /> : <Routes />}
+      </SafeAreaView>
     </SafeAreaProvider>
   );
 };
