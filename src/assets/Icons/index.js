@@ -33,6 +33,26 @@ import Invoices_SVG from './Invoices.svg';
 import Profile_SVG from './profile.svg';
 import Speaker_SVG from './Speaker.svg';
 
+import QC_SVG from './QC.svg';
+import Inspection_SVG from './Inspection.svg';
+import Delivery_SVG from './Delivery.svg';
+import Customer_SVG from './Customer.svg';
+import Assign_SVG from './Assign.svg';
+
+import BackArrow_SVG from './BackArrow.svg';
+import SearchInput_SVG from './searchInput.svg';
+
+import HomeInq_SVG from './HomeInq.svg';
+import BagInq_SVG from './BagInq.svg';
+import FurniInq_SVG from './FurniInq.svg';
+import WhatsappIn_SVG from './whatsappIn.svg';
+import ShoeInq_SVG from './ShoeInq.svg';
+import OnsiteIcon_SVG from './OnsiteIcon.svg';
+import MobileIn_SVG from './MobileIn.svg';
+
+import FirstOnBoard_SVG from './FirstOnBoard.svg';
+import SecondOnBoard_SVG from './SecondOnBoard.svg';
+import ThirdOnBoard_SVG from './ThirdOnBoard.svg';
 
 
 
@@ -68,5 +88,26 @@ export const INQ_Icon = ({ width, height }) => (<INQ_SVG width={width} height={h
 export const Invoices_Icon = ({ width, height }) => (<Invoices_SVG width={width} height={height} />);
 export const Profile_Icon = ({ width, height }) => (<Profile_SVG width={width} height={height} />);
 export const Speaker_Icon = ({ width, height }) => (<Speaker_SVG width={width} height={height} />);
+
+export const QC_Icon = ({ width, height }) => (<QC_SVG width={width} height={height} />);
+export const Inspection_Icon = ({ width, height }) => (<Inspection_SVG width={width} height={height} />);
+export const Delivery_Icon = ({ width, height }) => (<Delivery_SVG width={width} height={height} />);
+export const Customer_Icon = ({ width, height }) => (<Customer_SVG width={width} height={height} />);
+export const Assign_Icon = ({ width, height }) => (<Assign_SVG width={width} height={height} />);
+
+export const BackArrow_Icon = ({ width, height }) => (<BackArrow_SVG width={width} height={height} />);
+export const SearchInput_Icon = ({ width, height }) => (<SearchInput_SVG width={width} height={height} />);
+
+export const HomeInq_Icon = ({ width, height }) => (<HomeInq_SVG width={width} height={height} />);
+export const BagInq_Icon = ({ width, height }) => (<BagInq_SVG width={width} height={height} />);
+export const FurniInq_Icon = ({ width, height }) => (<FurniInq_SVG width={width} height={height} />);
+export const WhatsappIn_Icon = ({ width, height }) => (<WhatsappIn_SVG width={width} height={height} />);
+export const ShoeInq_Icon = ({ width, height }) => (<ShoeInq_SVG width={width} height={height} />);
+export const OnsiteIcon_Icon = ({ width, height }) => (<OnsiteIcon_SVG width={width} height={height} />);
+export const MobileIn_Icon = ({ width, height }) => (<MobileIn_SVG width={width} height={height} />);
+
+export const FirstOnBoard_Icon = ({ width, height }) => (<FirstOnBoard_SVG width={width} height={height} />);
+export const SecondOnBoard_Icon = ({ width, height }) => (<SecondOnBoard_SVG width={width} height={height} />);
+export const ThirdOnBoard_Icon = ({ width, height }) => (<ThirdOnBoard_SVG width={width} height={height} />);
 
 

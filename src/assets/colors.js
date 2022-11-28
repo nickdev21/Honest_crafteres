@@ -19,4 +19,8 @@ export const colors = {
   placeHolderColor: '#AAB3B7',
   TileFirst: '#FEF4ED',
   TileSecond: '#EEFDFF',
+  SearchBorder: '#E5E5E5',
+  SearchPlaceHOlderColor: '#45556099',
+  justLineColor: '#EBEBF0',
+  lowerGrey: '#455560cc',
 };

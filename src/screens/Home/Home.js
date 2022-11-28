@@ -58,7 +58,7 @@ const Home = () => {
               <Text style={styles.NameText}>John smith.</Text>
             </View>
             <View style={styles.CardStyling} >
-              <FlatList horizontal data={cardArray} renderItem={RequestCards} />
+              <FlatList horizontal data={cardArray} renderItem={RequestCards} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}/>
 
             </View>
           </View>

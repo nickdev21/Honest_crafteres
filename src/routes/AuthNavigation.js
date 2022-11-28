@@ -3,7 +3,7 @@ import { Easing, StatusBar } from 'react-native';
 import React from 'react';
 import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack';
 import NavigationStrings from './NavigationStrings';
-import { Login, OTPLogin, WelcomeRole } from '../screens';
+import { Login, OnBoardingScreen, OTPLogin, WelcomeRole } from '../screens';
 import { colors } from '../assets/colors';
 
 
@@ -43,6 +43,7 @@ const AuthNavigation = () => {
                 },
                 cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS,
             }}>
+                <Stack.Screen name={NavigationStrings.ONBOARDING_SCREEN} component={OnBoardingScreen} />
                 <Stack.Screen name={NavigationStrings.WELCOME_ROLE_SCREEN} component={WelcomeRole} />
                 <Stack.Screen name={NavigationStrings.LOGIN_SCREEN} component={Login} />
                 <Stack.Screen name={NavigationStrings.OTP_LOGIN_SCREEN} component={OTPLogin} />

@@ -6,7 +6,7 @@ import NavigationStrings from './NavigationStrings';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import CustomDrawer from './customDrawer';
 import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
-import { SalesHome } from '../screens';
+import { CustomerAccount, Inquiry, SalesHome, Search, SOCHome } from '../screens';
 import { colors } from '../assets/colors';
 
 const Drawer = createDrawerNavigator();
@@ -45,7 +45,11 @@ function HomeStack({ navigation }) {
         },
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
       }}>
+      <Stack.Screen name={NavigationStrings.SOC_HOME_SCREEN} component={SOCHome} />
       <Stack.Screen name={NavigationStrings.HOME_SCREEN} component={SalesHome} />
+      <Stack.Screen name={NavigationStrings.SEARCH_SCREEN} component={Search} />
+      <Stack.Screen name={NavigationStrings.INQUIRY_SCREEN} component={Inquiry} />
+      <Stack.Screen name={NavigationStrings.CUSTOMER_ACCOUNT_SCREEN} component={CustomerAccount} />
     </Stack.Navigator>
   );
 }

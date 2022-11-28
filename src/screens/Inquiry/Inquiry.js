@@ -1,27 +1,26 @@
 /* eslint-disable prettier/prettier */
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import React from 'react';
+import SearchInput from '../../component/Input/SearchInput';
 import CommonHeader from '../../component/Headers/CommonHeader';
 import { colors } from '../../assets/colors';
-import SearchInput from '../../component/Input/SearchInput';
+import InquiryTabs from './InquiryTabs';
 
-const Search = () => {
+const Inquiry = () => {
 
-    const SearchHeaderData = {
-        HeaderTitile: 'Search',
+    const InquiryHeaderData = {
+        HeaderTitile: 'Inquiry',
     };
-
     return (
         <View style={styles.SearchWrapper} >
-            <CommonHeader data={SearchHeaderData} />
+            <CommonHeader data={InquiryHeaderData} />
             <SearchInput style={styles.ButtonStyles} />
+            <InquiryTabs />
         </View>
     );
 };
 
-export default Search;
-
-
+export default Inquiry;
 
 
 
@@ -32,7 +31,7 @@ const styles = StyleSheet.create({
         // flexDirection: 'row',
     },
     ButtonStyles: {
-        width: '95%',
+        width: '92%',
     },
 
 });

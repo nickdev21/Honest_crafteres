@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import React from 'react';
 import { Alert, FlatList, Pressable, StyleSheet, Text, View, Platform } from 'react-native';
 import { DrawerIcon, HC_Logo } from '../assets/Icons';

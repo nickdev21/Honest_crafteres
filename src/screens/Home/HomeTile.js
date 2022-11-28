@@ -2,14 +2,17 @@
 import { View, Text, StyleSheet, Pressable } from 'react-native';
 import React from 'react';
 import { windowHeight } from '../../utils/Dimension';
-import { HomeTileArrow_Icon, INQ_Icon } from '../../assets/Icons';
+import { HomeTileArrow_Icon } from '../../assets/Icons';
 import { colors } from '../../assets/colors';
 import fonts from '../../assets/fonts';
+import { useNavigation } from '@react-navigation/native';
 
 const HomeTile = ({ data }) => {
-    console.log(data?.index, "CHECK DATA")
+
+    const navgation = useNavigation();
+
     return (
-        <Pressable style={[styles.TileWraper, { backgroundColor: data?.index % 2 === 0 ? colors.TileFirst : colors.TileSecond }]} >
+        <Pressable onPress={() => { navgation.navigate(data?.item?.SCREEN_NAME); }} style={[styles.TileWraper, { backgroundColor: data?.index % 2 === 0 ? colors.TileFirst : colors.TileSecond }]} >
             <View style={styles.FirstWrap} >
                 <data.item.Icon width={'90%'} height={'90%'} />
             </View>
@@ -39,6 +42,7 @@ const styles = StyleSheet.create({
         borderRadius: 16,
         marginVertical: 20,
         flexDirection: 'row',
+        paddingVertical: 2,
     },
     FirstWrap: {
         // backgroundColor: 'pink',

@@ -52,16 +52,12 @@ const LoginComponent = ({ data }) => {
                 <Pressable style={styles.LoginWrapper} onPress={Keyboard.dismiss} >
                     <View style={styles.UpperWrapper} >
                         <View style={styles.EightStyle} >
-                            {/* <Image source={Images.loginBackPNG} style={styles.ImageStyle} resizeMode="cover" /> */}
                             <ImageBackground source={Images.loginBackPNG} style={styles.ImageStyle} resizeMode="stretch" />
                         </View>
                         <View style={styles.EmptyView} />
                         <View style={styles.CenterIcon} >
-                            {/* <View style={styles.CircleView} /> */}
-                            {/* <SALESIcon width={'100%'} height={'70%'} /> */}
                             <data.CenterIcon width={'100%'} height={'70%'} />
                         </View>
-                        {/* <Text style={styles.TextStyle}>Sales</Text> */}
                     </View>
                     <View style={styles.LowerWrapper} >
                         <View style={styles.LowerFirst} >
@@ -82,6 +78,7 @@ const LoginComponent = ({ data }) => {
                                         autoCorrect={false}
                                         keyboardType="number-pad"
                                         autoCapitalize="none"
+                                        maxLength={10}
                                     />
                                 </View>
                                 :
@@ -97,9 +94,15 @@ const LoginComponent = ({ data }) => {
 
                         </View>
                         <View style={styles.LowerSecond} >
-                            <FormButton
-                                disabled={!pinReady && !mobileValidate}
-                                buttonTitle={data?.ButtonTitle} onPress={() => { navigation.navigate(data?.NavigationScreen); }} style={(!pinReady && !mobileValidate) ? styles.ButtonStyle : null} />
+                            {data?.OTPLogin === true ?
+                                <FormButton
+                                    disabled={!pinReady && !mobileValidate}
+                                    buttonTitle={data?.ButtonTitle} onPress={() => { navigation.navigate(data?.NavigationScreen); }} style={(!pinReady && !mobileValidate) ? styles.ButtonStyle : null} />
+                                :
+                                <FormButton
+                                    // disabled={!pinReady && !mobileValidate}
+                                    buttonTitle={data?.ButtonTitle} onPress={() => { navigation.navigate(data?.NavigationScreen); }} />
+                            }
                             <View style={styles.TermsTextView} >
                                 <Text style={styles.TermsText}>By continuing, you agree to the honest crafters <Text style={styles.NestedText} >terms & services</Text></Text>
                             </View>
@@ -228,6 +231,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     TextInputStyles: {
+        borderBottomColor: 'red',
         paddingLeft: 15,
         fontSize: 16,
         lineHeight: 14,
