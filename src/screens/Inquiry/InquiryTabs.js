@@ -27,7 +27,6 @@ const InquiryTabs = () => {
                     // tabBarStyle: {backgroundColor: 'yellow'},
                 },
             }}
-            // tabBarOptions={{ labelStyle: { textTransform: 'none', color: colors.AnotherSecondaryColor } }}
             upperCaseLabel={false}
             tabBarActiveTintColor={colors.AnotherSecondaryColor}
 

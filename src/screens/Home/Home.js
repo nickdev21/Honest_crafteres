@@ -9,6 +9,7 @@ import Images from '../../assets/Images';
 import fonts from '../../assets/fonts';
 import HomeTile from './HomeTile';
 import { Calander_Icon, INQ_Icon, Invoices_Icon, Profile_Icon, Speaker_Icon } from '../../assets/Icons';
+import NavigationStrings from '../../routes/NavigationStrings';
 
 const Home = () => {
 
@@ -18,11 +19,11 @@ const Home = () => {
   { id: '2', number: 26, title: 'Inquiries to reply', progress: '', image: Images.orderPNG },
   ];
 
-  const TileArray = [{ id: '0', SubTitle: 'View inquiries assigned to you.', title: 'Inquiry', Icon: INQ_Icon },
-  { id: '1', SubTitle: 'View inquiries assigned to you.', title: 'Invoices', Icon: Invoices_Icon },
-  { id: '2', SubTitle: 'Update your profile details. ', title: 'Profile', Icon: Profile_Icon },
-  { id: '3', SubTitle: 'See schedule of each driver. ', title: 'Staff Schedule', Icon: Calander_Icon },
-  { id: '4', SubTitle: 'Latest announcement from HC.', title: 'Announcements', Icon: Speaker_Icon },
+  const TileArray = [{ id: '0', SubTitle: 'View inquiries assigned to you.', title: 'Inquiry', Icon: INQ_Icon, SCREEN_NAME: NavigationStrings.INQUIRY_SCREEN },
+  { id: '1', SubTitle: 'View inquiries assigned to you.', title: 'Invoices', Icon: Invoices_Icon, SCREEN_NAME: NavigationStrings.INQUIRY_SCREEN },
+  { id: '2', SubTitle: 'Update your profile details. ', title: 'Profile', Icon: Profile_Icon, SCREEN_NAME: NavigationStrings.INQUIRY_SCREEN },
+  { id: '3', SubTitle: 'See schedule of each driver. ', title: 'Staff Schedule', Icon: Calander_Icon, SCREEN_NAME: NavigationStrings.INQUIRY_SCREEN },
+  { id: '4', SubTitle: 'Latest announcement from HC.', title: 'Announcements', Icon: Speaker_Icon, SCREEN_NAME: NavigationStrings.INQUIRY_SCREEN },
   ];
 
 
@@ -58,7 +59,7 @@ const Home = () => {
               <Text style={styles.NameText}>John smith.</Text>
             </View>
             <View style={styles.CardStyling} >
-              <FlatList horizontal data={cardArray} renderItem={RequestCards} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}/>
+              <FlatList horizontal data={cardArray} renderItem={RequestCards} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false} />
 
             </View>
           </View>
@@ -128,27 +129,31 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
   TextView: {
+    // backgroundColor: 'red',
     height: '60%',
     width: '100%',
-    // backgroundColor: 'pink',
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center',
   },
   HeadingText: {
-    width: windowWidth / 4,
+    // backgroundColor: 'pink',
+    width: '90%',
+    height: 'auto',
     fontFamily: fonts.PoppinsSemiBold,
     color: colors.whiteColor,
     fontSize: 12,
-    paddingTop: 10,
+    paddingTop: 5,
     textAlign: 'center',
   },
   HeadingTextNumber: {
-    width: windowWidth / 4,
+    // backgroundColor: 'green',
+    width: '80%',
+    // height: '60%',
     fontFamily: fonts.PoppinsBold,
     color: colors.whiteColor,
     fontSize: 28,
-    paddingTop: 10,
+    paddingTop: 5,
     textAlign: 'center',
   },
   ScrollArea: {

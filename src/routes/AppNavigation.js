@@ -6,7 +6,7 @@ import NavigationStrings from './NavigationStrings';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import CustomDrawer from './customDrawer';
 import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
-import { CustomerAccount, Inquiry, SalesHome, Search, SOCHome } from '../screens';
+import { Chat, CloseInquiry, CollectPayment, CustomerAccount, CustomerProfileTab, Inquiry, InvoiceDetails, InvoicePreview, SalesHome, Search, ServiceDetails, SOCHome } from '../screens';
 import { colors } from '../assets/colors';
 
 const Drawer = createDrawerNavigator();
@@ -50,6 +50,12 @@ function HomeStack({ navigation }) {
       <Stack.Screen name={NavigationStrings.SEARCH_SCREEN} component={Search} />
       <Stack.Screen name={NavigationStrings.INQUIRY_SCREEN} component={Inquiry} />
       <Stack.Screen name={NavigationStrings.CUSTOMER_ACCOUNT_SCREEN} component={CustomerAccount} />
+      <Stack.Screen name={NavigationStrings.CUSTOMER_PROFILE_TAB} component={CustomerProfileTab} />
+      <Stack.Screen name={NavigationStrings.INVOICE_DETAILS} component={InvoiceDetails} />
+      <Stack.Screen name={NavigationStrings.INVOICE_PREVIEW} component={InvoicePreview} />
+      <Stack.Screen name={NavigationStrings.COLLECT_PAYMENT} component={CollectPayment} />
+      <Stack.Screen name={NavigationStrings.SERVICE_DETAIL} component={ServiceDetails} />
+      <Stack.Screen name={NavigationStrings.CHAT_SCREEN} component={Chat} />
     </Stack.Navigator>
   );
 }

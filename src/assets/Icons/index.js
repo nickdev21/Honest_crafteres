@@ -54,6 +54,34 @@ import FirstOnBoard_SVG from './FirstOnBoard.svg';
 import SecondOnBoard_SVG from './SecondOnBoard.svg';
 import ThirdOnBoard_SVG from './ThirdOnBoard.svg';
 
+import TotalOrder_SVG from './TotalOrder.svg';
+import Tick_SVG from './Tick.svg';
+import Suggest_SVG from './suggest.svg';
+import OpenOrder_SVG from './OpenOrder.svg';
+import ClosedOrder_SVG from './ClosedOrder.svg';
+import Close_SVG from './close.svg';
+import TotalBusiness_SVG from './TotalBusiness.svg';
+
+import QuestionMark_SVG from './QuestionMark.svg';
+import RecentPage_SVG from './RecentPage.svg';
+
+import ReceiptTitile_SVG from './ReceiptTitile.svg';
+
+import PayPal_SVG from './PayPal.svg';
+import DownArrow_SVG from './DownArrow.svg';
+
+import Gallery_SVG from './Gallery.svg';
+
+import SuccesPayment_SVG from './SuccesPayment.svg';
+import ClosePopUp_SVG from './ClosePopUp.svg';
+import SuccessGreen_SVG from './successGreen.svg';
+import CloseRed_SVG from './CloseRed.svg';
+import Merge_SVG from './Merge.svg';
+
+
+
+
+
 
 
 
@@ -109,5 +137,29 @@ export const MobileIn_Icon = ({ width, height }) => (<MobileIn_SVG width={width}
 export const FirstOnBoard_Icon = ({ width, height }) => (<FirstOnBoard_SVG width={width} height={height} />);
 export const SecondOnBoard_Icon = ({ width, height }) => (<SecondOnBoard_SVG width={width} height={height} />);
 export const ThirdOnBoard_Icon = ({ width, height }) => (<ThirdOnBoard_SVG width={width} height={height} />);
+
+export const TotalOrder_Icon = ({ width, height }) => (<TotalOrder_SVG width={width} height={height} />);
+export const Tick_Icon = ({ width, height }) => (<Tick_SVG width={width} height={height} />);
+export const Suggest_Icon = ({ width, height }) => (<Suggest_SVG width={width} height={height} />);
+export const OpenOrder_Icon = ({ width, height }) => (<OpenOrder_SVG width={width} height={height} />);
+export const ClosedOrder_Icon = ({ width, height }) => (<ClosedOrder_SVG width={width} height={height} />);
+export const Close_Icon = ({ width, height }) => (<Close_SVG width={width} height={height} />);
+export const TotalBusiness_Icon = ({ width, height }) => (<TotalBusiness_SVG width={width} height={height} />);
+
+export const QuestionMark_Icon = ({ width, height }) => (<QuestionMark_SVG width={width} height={height} />);
+export const RecentPage_Icon = ({ width, height }) => (<RecentPage_SVG width={width} height={height} />);
+
+export const ReceiptTitile_Icon = ({ width, height }) => (<ReceiptTitile_SVG width={width} height={height} />);
+
+export const PayPal_Icon = ({ width, height }) => (<PayPal_SVG width={width} height={height} />);
+export const DownArrow_Icon = ({ width, height }) => (<DownArrow_SVG width={width} height={height} />);
+
+export const Gallery_Icon = ({ width, height }) => (<Gallery_SVG width={width} height={height} />);
+
+export const SuccesPayment_Icon = ({ width, height }) => (<SuccesPayment_SVG width={width} height={height} />);
+export const ClosePopUp_Icon = ({ width, height }) => (<ClosePopUp_SVG width={width} height={height} />);
+export const SuccessGreen_Icon = ({ width, height }) => (<SuccessGreen_SVG width={width} height={height} />);
+export const CloseRed_Icon = ({ width, height }) => (<CloseRed_SVG width={width} height={height} />);
+export const Merge_Icon = ({ width, height }) => (<Merge_SVG width={width} height={height} />);
 
 

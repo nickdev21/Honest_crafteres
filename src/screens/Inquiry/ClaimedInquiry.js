@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { View, Text, StyleSheet, FlatList } from 'react-native';
 import React from 'react';
-import InquiryCard from '../../component/InquiryCard/InquiryCard';
+import InquiryCard from '../../component/Cards/InquiryCard';
 import { colors } from '../../assets/colors';
 import { MobileIn_Icon, WhatsappIn_Icon } from '../../assets/Icons';
 
@@ -12,6 +12,9 @@ const ClaimedInquiry = () => {
         { id: 1, name: 'Jhon Smith', otherDetail: 'Loreum ipsum is dummy text...', inquiryNumber: '#123 General Inquiry', Icon: WhatsappIn_Icon },
         { id: 2, name: 'Kristin Watson', otherDetail: 'Loreum ipsum is dummy text...', inquiryNumber: '#123 General Inquiry', Icon: MobileIn_Icon },
         { id: 3, name: 'Wade Warren', otherDetail: 'Loreum ipsum is dummy text...', inquiryNumber: '#123 General Inquiry', Icon: WhatsappIn_Icon },
+        { id: 4, name: 'Wade Warren', otherDetail: 'Loreum ipsum is dummy text...', inquiryNumber: '#123 General Inquiry', Icon: WhatsappIn_Icon },
+        { id: 5, name: 'Wade Warren', otherDetail: 'Loreum ipsum is dummy text...', inquiryNumber: '#123 General Inquiry', Icon: WhatsappIn_Icon },
+        { id: 6, name: 'Wade Warren', otherDetail: 'Loreum ipsum is dummy text...', inquiryNumber: '#123 General Inquiry', Icon: WhatsappIn_Icon },
     ]
 
 

@@ -6,11 +6,12 @@ import LoginComponent from '../../component/LoginComponent';
 import NavigationStrings from '../../routes/NavigationStrings';
 import { HCLOGO_Icon } from '../../assets/Icons';
 
-const OTPLogin = () => {
+const OTPLogin = (props) => {
+
 
     let data = {
-        OTPLogin : true,
-        NavigationScreen : NavigationStrings?.HOME_SCREEN,
+        OTPLogin: true,
+        NavigationScreen: NavigationStrings?.HOME_SCREEN,
         CenterIcon: HCLOGO_Icon,
         ButtonTitle: 'Get Verified',
         PageHeading: 'OTP VERIFICATION',

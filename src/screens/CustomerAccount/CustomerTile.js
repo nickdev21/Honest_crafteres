@@ -1,15 +1,20 @@
 /* eslint-disable prettier/prettier */
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, Pressable } from 'react-native';
 import React from 'react';
 import { colors } from '../../assets/colors';
 import { windowHeight } from '../../utils/Dimension';
 import fonts from '../../assets/fonts';
 import Images from '../../assets/Images';
+import { useNavigation } from '@react-navigation/native';
+import NavigationStrings from '../../routes/NavigationStrings';
 
 const CustomerTile = ({ data }) => {
     const { item, index } = data;
+
+    const navigation = useNavigation()
+
     return (
-        <View style={styles.TileWrapper} >
+        <Pressable style={styles.TileWrapper} onPress={() => { navigation?.navigate(NavigationStrings.CUSTOMER_PROFILE_TAB) }} >
             <View style={styles.ImageWrapper} >
                 <View style={styles.ImageSTyle} >
                     <Image source={Images.TempUser} style={styles.UserImageStyle} />
@@ -22,7 +27,7 @@ const CustomerTile = ({ data }) => {
             <View style={styles.DateStyle} >
                 <Text style={styles.dateText} >since 10/09/2022</Text>
             </View>
-        </View>
+        </Pressable>
     );
 };
 
@@ -93,18 +98,17 @@ const styles = StyleSheet.create({
 
     },
     userCode: {
-        color: colors.Black,
+        color: colors.CustomerAccount,
         fontSize: 12,
         lineHeight: 14,
         fontFamily: fonts.PoppinsMedium,
 
     },
     dateText: {
-        color: colors.Black,
+        color: colors.CustomerAccount,
         fontSize: 12,
         // lineHeight: 10,
         fontFamily: fonts.PoppinsMedium,
-
     },
 
 })

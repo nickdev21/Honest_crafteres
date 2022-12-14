@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
         borderRadius: 16,
         marginVertical: 20,
         flexDirection: 'row',
-        paddingVertical: 2,
+        paddingVertical: 3,
     },
     FirstWrap: {
         // backgroundColor: 'pink',

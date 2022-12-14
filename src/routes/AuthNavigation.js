@@ -3,7 +3,7 @@ import { Easing, StatusBar } from 'react-native';
 import React from 'react';
 import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack';
 import NavigationStrings from './NavigationStrings';
-import { Login, OnBoardingScreen, OTPLogin, WelcomeRole } from '../screens';
+import { CustomerAccount, Inquiry, Login, OnBoardingScreen, OTPLogin, SalesHome, Search, SOCHome, WelcomeRole } from '../screens';
 import { colors } from '../assets/colors';
 
 
@@ -11,7 +11,9 @@ const Stack = createStackNavigator();
 
 
 
-const AuthNavigation = () => {
+const AuthNavigation = (props) => {
+
+
 
     const config = {
         animation: 'timing',
@@ -47,6 +49,12 @@ const AuthNavigation = () => {
                 <Stack.Screen name={NavigationStrings.WELCOME_ROLE_SCREEN} component={WelcomeRole} />
                 <Stack.Screen name={NavigationStrings.LOGIN_SCREEN} component={Login} />
                 <Stack.Screen name={NavigationStrings.OTP_LOGIN_SCREEN} component={OTPLogin} />
+                {/* <Stack.Screen name={NavigationStrings.SOC_HOME_SCREEN} component={SOCHome} />
+                <Stack.Screen name={NavigationStrings.HOME_SCREEN} component={SalesHome} />
+                <Stack.Screen name={NavigationStrings.SEARCH_SCREEN} component={Search} />
+                <Stack.Screen name={NavigationStrings.INQUIRY_SCREEN} component={Inquiry} />
+                <Stack.Screen name={NavigationStrings.CUSTOMER_ACCOUNT_SCREEN} component={CustomerAccount} /> */}
+
             </Stack.Navigator>
         </>
     );

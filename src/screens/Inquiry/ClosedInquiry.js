@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { View, StyleSheet, FlatList } from 'react-native';
 import React from 'react';
-import InquiryCard from '../../component/InquiryCard/InquiryCard';
+import InquiryCard from '../../component/Cards/InquiryCard';
 import { colors } from '../../assets/colors';
 import { MobileIn_Icon, WhatsappIn_Icon } from '../../assets/Icons';
 

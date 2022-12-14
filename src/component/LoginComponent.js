@@ -47,7 +47,9 @@ const LoginComponent = ({ data }) => {
         <>
             <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
                 style={styles.KeybaordStyle} >
-                <StatusBar barStyle="light-content" backgroundColor="transparent" translucent={true} />
+                <StatusBar barStyle="light-content" backgroundColor="transparent" 
+                translucent={true} />
+                {/* <StatusBar barStyle="light-content" backgroundColor={colors.primaryColor} /> */}
 
                 <Pressable style={styles.LoginWrapper} onPress={Keyboard.dismiss} >
                     <View style={styles.UpperWrapper} >
