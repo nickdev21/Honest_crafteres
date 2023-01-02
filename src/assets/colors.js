@@ -10,6 +10,8 @@ export const colors = {
   successColor: '#00AB6F',
   PendingColor: '#F5AB35',
   errorColor: '#EF5448',
+  PartialPurple: '#C05DEF',
+  PaidGreen: '#00AB6F',
   whiteColor: '#FFFFFF',
   whiteBlueColor: '#FEFDFF',
   WelcomeCardText: '#1A3353',
@@ -31,7 +33,49 @@ export const colors = {
   CustomerSinceGreen: '#0BAB7C',
   InvoiceCardColor: '#AFAFAF',
   SecondSectionColor: 'rgba(69, 85, 96, 0.7)',
+  ShadowColor: 'rgba(0, 0, 0, 0.3)',
   AstrikRed: '#E82E2E',
   InquiryCloseButtonColor: '#F8F7F7',
   TextRed: '#ED2939',
+  CheckBoxColor: '#D5D5D5',
+  ChatTextInput: '#F9F9F9',
+  ChatUserFirst: '#FBFBFB',
+  AnotherBackColor: '#FEFDFF',
+
+  ItemTileFirstColor: '#94A3B8',
+  ItemTileSecondColor: '#FF9EA2',
+  ItemTileThirdColor: '#B5BEF4',
+  ItemTileFourthColor: '#4FD6A5',
+
+  // TimeLineColor 
+  TimeLineFirstColor: '#0078FF',
+  TimeLineSecondColor: '#C05DEF',
+  TimeLineThirdColor: '#05ADA3',
+  TimeLineFourthColor: '#FAD320',
+  TimeLineFifthColor: '#00AB6F',
+  TimeLineSixColor: '#FA206F',
+  TimeLineSevenColor: '#00AB11',
+  TimeLineEightColor: '#F66054',
+  TimeLineNineColor: '#499DFB',
+  TimeLineTenColor: '#499DFB',
+  TimeLineEleevenColor: '#685BFB',
+  TimeLineTwelveColor: '#00AB6F',
+  TimeLineThirteenColor: '#05ADA3',
+  TimeLineFourteenColor: '#0078FF',
+  TimeLineFifteenColor: '#00AB6F',
+  TimeLineSixteenColor: '#685BFB',
+  TimeLineSevenTeenColor: '#F66054',
+  TimeLineEighteenColor: '#F5AB35',
+  TimeLineNineteenColor: '#00AB6F',
+  TimeColorLine: '#045187',
+  DashTimeLine: '#CACACA',
+
+  InvoiceLineGrey: '#F2F2F2',
 };
+
+
+
+
+
+
+

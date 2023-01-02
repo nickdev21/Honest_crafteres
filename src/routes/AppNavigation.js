@@ -6,7 +6,7 @@ import NavigationStrings from './NavigationStrings';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import CustomDrawer from './customDrawer';
 import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
-import { Chat, CloseInquiry, CollectPayment, CustomerAccount, CustomerProfileTab, Inquiry, InvoiceDetails, InvoicePreview, SalesHome, Search, ServiceDetails, SOCHome } from '../screens';
+import { AssesmentItems, Chat, CloseInquiry, CollectPayment, ConfirmService, ConfirmServiceInfo, CustomerAccount, CustomerProfileTab, Inquiry, InvoiceDetails, InvoicePreview, InvoicesList, ItemAssesment, ItemDetail, PaymentDetails, PickUpHandOver, QRCode, SalesHome, Search, ServiceDetails, ServiceInfo, Services, SOCHome } from '../screens';
 import { colors } from '../assets/colors';
 
 const Drawer = createDrawerNavigator();
@@ -52,10 +52,22 @@ function HomeStack({ navigation }) {
       <Stack.Screen name={NavigationStrings.CUSTOMER_ACCOUNT_SCREEN} component={CustomerAccount} />
       <Stack.Screen name={NavigationStrings.CUSTOMER_PROFILE_TAB} component={CustomerProfileTab} />
       <Stack.Screen name={NavigationStrings.INVOICE_DETAILS} component={InvoiceDetails} />
+      <Stack.Screen name={NavigationStrings.CLOSE_INQUIRY} component={CloseInquiry} />
       <Stack.Screen name={NavigationStrings.INVOICE_PREVIEW} component={InvoicePreview} />
       <Stack.Screen name={NavigationStrings.COLLECT_PAYMENT} component={CollectPayment} />
       <Stack.Screen name={NavigationStrings.SERVICE_DETAIL} component={ServiceDetails} />
       <Stack.Screen name={NavigationStrings.CHAT_SCREEN} component={Chat} />
+      <Stack.Screen name={NavigationStrings.CONFIRM_SERVICES} component={ConfirmService} />
+      <Stack.Screen name={NavigationStrings.SERVICES_SCREEN} component={Services} />
+      <Stack.Screen name={NavigationStrings.SERVICES_INFO} component={ServiceInfo} />
+      <Stack.Screen name={NavigationStrings.CONFIRM_SERVICE_INFO} component={ConfirmServiceInfo} />
+      <Stack.Screen name={NavigationStrings.PAYMENT_DETAILS} component={PaymentDetails} />
+      <Stack.Screen name={NavigationStrings.ITEM_DETAILS} component={ItemDetail} />
+      <Stack.Screen name={NavigationStrings.QR_CODE_SCREEN} component={QRCode} />
+      <Stack.Screen name={NavigationStrings.INVOICES_LIST} component={InvoicesList} />
+      <Stack.Screen name={NavigationStrings.PICKUP_HANDOVER} component={PickUpHandOver} />
+      <Stack.Screen name={NavigationStrings.ASSESMENT_ITEMS} component={AssesmentItems} />
+      <Stack.Screen name={NavigationStrings.ITEM_ASSESMENT} component={ItemAssesment} />
     </Stack.Navigator>
   );
 }

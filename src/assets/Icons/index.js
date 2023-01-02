@@ -79,6 +79,90 @@ import CloseRed_SVG from './CloseRed.svg';
 import Merge_SVG from './Merge.svg';
 
 
+import Date_SVG from './Calendar.svg';
+import Increament_SVG from './Increament.svg';
+import Decrement_SVG from './Decrement.svg';
+
+import Media_SVG from './Media.svg';
+import Send_SVG from './Send.svg';
+import Mic_SVG from './Mic.svg';
+import DoneAll_SVG from './DoneAll.svg';
+import Wrench_SVG from './Wrench.svg';
+import HamBurger_SVG from './HamBurger.svg';
+import DurationClock_SVG from './DurationClock.svg';
+
+import Note_SVG from './note.svg';
+import Trash_SVG from './trash.svg';
+import HelpCenter_SVG from './HelpCenter.svg';
+import MsgPop_SVG from './MsgPop.svg';
+
+import CrossCta_SVG from './CrossCta.svg';
+
+import Pen_SVG from './Pen.svg';
+import TrashItem_SVG from './TrashItem.svg';
+import QRCode_SVG from './QRCode.svg';
+
+import Flag_SVG from './Flag.svg';
+import NavFlag_SVG from './NavFlag.svg';
+import YellowFlag_SVG from './YellowFlag.svg';
+
+import MailSend_SVG from './MailSend.svg';
+import ShareSend_SVG from './ShareSend.svg';
+import WhatsAppSend_SVG from './WhatsAppSend.svg';
+
+import WhiteTick_SVG from './WhiteTick.svg';
+import Cross_SVG from './Cross.svg';
+
+import Attachment_SVG from './Attachment.svg';
+import ItemUser_SVG from './ItemUser.svg';
+import CalanderItem_SVG from './CalanderItem.svg';
+import CustomerDetail_SVG from './CustomerDetail.svg';
+import ItemDetail_SVG from './ItemDetail.svg';
+import ItemStatus_SVG from './ItemStatus.svg';
+
+import NoInvoice_SVG from './NoInvoice.svg';
+
+import EyeVisible_SVG from './EyeVisible.svg';
+import NoImage_SVG from './NoImage.svg';
+import MoverIcon_SVG from './MoverIcon.svg';
+
+import Sign_SVG from './Sign.svg';
+import Box_SVG from './Box.svg';
+import ClockTimer_SVG from './ClockTimer.svg';
+import DownloadPickUp_SVG from './DownloadPickUp.svg';
+import HandoverDetail_SVG from './HandoverDetail.svg';
+
+import NoAssesmentItem_SVG from './NoAssesmentItem.svg';
+
+import StepOne_SVG from './StepOne.svg';
+import StepTwo_SVG from './StepTwo.svg';
+import StepThree_SVG from './StepThree.svg';
+import StepFour_SVG from './StepFour.svg';
+import StepFive_SVG from './StepFive.svg';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -161,5 +245,65 @@ export const ClosePopUp_Icon = ({ width, height }) => (<ClosePopUp_SVG width={wi
 export const SuccessGreen_Icon = ({ width, height }) => (<SuccessGreen_SVG width={width} height={height} />);
 export const CloseRed_Icon = ({ width, height }) => (<CloseRed_SVG width={width} height={height} />);
 export const Merge_Icon = ({ width, height }) => (<Merge_SVG width={width} height={height} />);
+
+export const Date_Icon = ({ width, height }) => (<Date_SVG width={width} height={height} />);
+export const Increament_Icon = ({ width, height }) => (<Increament_SVG width={width} height={height} />);
+export const Decrement_Icon = ({ width, height }) => (<Decrement_SVG width={width} height={height} />);
+
+export const Media_Icon = ({ width, height }) => (<Media_SVG width={width} height={height} />);
+export const Send_Icon = ({ width, height }) => (<Send_SVG width={width} height={height} />);
+export const Mic_Icon = ({ width, height }) => (<Mic_SVG width={width} height={height} />);
+export const DoneAll_Icon = ({ width, height }) => (<DoneAll_SVG width={width} height={height} />);
+export const Wrench_Icon = ({ width, height }) => (<Wrench_SVG width={width} height={height} />);
+export const HamBurger_Icon = ({ width, height }) => (<HamBurger_SVG width={width} height={height} />);
+export const DurationClock_Icon = ({ width, height }) => (<DurationClock_SVG width={width} height={height} />);
+
+export const Note_Icon = ({ width, height }) => (<Note_SVG width={width} height={height} />);
+export const Trash_Icon = ({ width, height }) => (<Trash_SVG width={width} height={height} />);
+export const HelpCenter_Icon = ({ width, height }) => (<HelpCenter_SVG width={width} height={height} />);
+export const MsgPop_Icon = ({ width, height }) => (<MsgPop_SVG width={width} height={height} />);
+
+export const CrossCta_Icon = ({ width, height }) => (<CrossCta_SVG width={width} height={height} />);
+export const Pen_Icon = ({ width, height }) => (<Pen_SVG width={width} height={height} />);
+export const TrashItem_Icon = ({ width, height }) => (<TrashItem_SVG width={width} height={height} />);
+export const QRCode_Icon = ({ width, height }) => (<QRCode_SVG width={width} height={height} />);
+
+export const Flag_Icon = ({ width, height }) => (<Flag_SVG width={width} height={height} />);
+export const NavFlag_Icon = ({ width, height }) => (<NavFlag_SVG width={width} height={height} />);
+export const YellowFlag_Icon = ({ width, height }) => (<YellowFlag_SVG width={width} height={height} />);
+
+export const MailSend_Icon = ({ width, height }) => (<MailSend_SVG width={width} height={height} />);
+export const ShareSend_Icon = ({ width, height }) => (<ShareSend_SVG width={width} height={height} />);
+export const WhatsAppSend_Icon = ({ width, height }) => (<WhatsAppSend_SVG width={width} height={height} />);
+
+export const WhiteTick_Icon = ({ width, height }) => (<WhiteTick_SVG width={width} height={height} />);
+export const Cross_Icon = ({ width, height }) => (<Cross_SVG width={width} height={height} />);
+
+export const Attachment_Icon = ({ width, height }) => (<Attachment_SVG width={width} height={height} />);
+export const ItemUser_Icon = ({ width, height }) => (<ItemUser_SVG width={width} height={height} />);
+export const CalanderItem_Icon = ({ width, height }) => (<CalanderItem_SVG width={width} height={height} />);
+export const CustomerDetail_Icon = ({ width, height }) => (<CustomerDetail_SVG width={width} height={height} />);
+export const ItemDetail_Icon = ({ width, height }) => (<ItemDetail_SVG width={width} height={height} />);
+export const ItemStatus_Icon = ({ width, height }) => (<ItemStatus_SVG width={width} height={height} />);
+
+export const NoInvoice_Icon = ({ width, height }) => (<NoInvoice_SVG width={width} height={height} />);
+
+export const EyeVisible_Icon = ({ width, height }) => (<EyeVisible_SVG width={width} height={height} />);
+export const NoImage_Icon = ({ width, height }) => (<NoImage_SVG width={width} height={height} />);
+export const MoverIcon_Icon = ({ width, height }) => (<MoverIcon_SVG width={width} height={height} />);
+
+export const Sign_Icon = ({ width, height }) => (<Sign_SVG width={width} height={height} />);
+export const Box_Icon = ({ width, height }) => (<Box_SVG width={width} height={height} />);
+export const ClockTimer_Icon = ({ width, height }) => (<ClockTimer_SVG width={width} height={height} />);
+export const DownloadPickUp_Icon = ({ width, height }) => (<DownloadPickUp_SVG width={width} height={height} />);
+export const HandoverDetail_Icon = ({ width, height }) => (<HandoverDetail_SVG width={width} height={height} />);
+
+export const NoAssesmentItem_Icon = ({ width, height }) => (<NoAssesmentItem_SVG width={width} height={height} />);
+
+export const StepOne_Icon = ({ width, height }) => (<StepOne_SVG width={width} height={height} />);
+export const StepTwo_Icon = ({ width, height }) => (<StepTwo_SVG width={width} height={height} />);
+export const StepThree_Icon = ({ width, height }) => (<StepThree_SVG width={width} height={height} />);
+export const StepFour_Icon = ({ width, height }) => (<StepFour_SVG width={width} height={height} />);
+export const StepFive_Icon = ({ width, height }) => (<StepFive_SVG width={width} height={height} />);
 
 

@@ -61,7 +61,7 @@ const OTPInputFeild = ({ setpinReady, code, setcode, maxLength }) => {
             <Pressable style={styles.pressableStyle} onPress={handleOnpress} >
                 {codeDigitsArray?.map((item, index) => toCodeDigitInput(item, index))}
             </Pressable>
-            <TextInput style={styles.HiddenTextInput} value={code} onChangeText={setcode} maxLength={maxLength} keyboardType="number-pad" ref={TextInputRef} onBlur={onHandleBlur} textContentType="oneTimeCode" />
+            <TextInput style={styles.HiddenTextInput}  value={code} onChangeText={setcode} maxLength={maxLength} keyboardType="number-pad" ref={TextInputRef} onBlur={onHandleBlur} textContentType="oneTimeCode" />
         </View>
     );
 };
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
         // padding: 12,
         // marginTop: 15,
         // width: 300,
-        // color: colors.whiteColor,
+        // color: 'red',
         position: 'absolute',
         width: 1,
         height: 1,
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
         // fontFamily: 22,
         fontWeight: fonts.PoppinsSemiBold,
         textAlign: 'center',
-        // color: colors.whiteColor,
+        color: colors.AnotherSecondaryColor,
     },
     OTPInputFocused: {
         borderColor: 'transparent',

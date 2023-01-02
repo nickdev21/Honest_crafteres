@@ -23,13 +23,13 @@ const PaymentSuccessModal = (props) => {
                     transparent={true}
                     visible={modalVisible}
                     onRequestClose={() => {
-                        Alert.alert('Modal has been closed.');
                         setModalVisible(!modalVisible);
+                        props?.extraFunction && props?.extraFunction(false);
                     }}
                 >
                     <View style={styles.centeredView}>
                         <View style={styles.modalView}>
-                            <Pressable onPress={() => setModalVisible(!modalVisible)} style={styles.closePopUp} >
+                            <Pressable onPress={() => { setModalVisible(!modalVisible); props?.extraFunction && props?.extraFunction(false); }} style={styles.closePopUp} >
                                 <ClosePopUp_Icon width={'15%'} height={'100%'} />
                             </Pressable>
                             <View style={styles.IconStyle} >
@@ -41,7 +41,7 @@ const PaymentSuccessModal = (props) => {
                         </View>
                     </View>
                 </Modal>
-                <FormButton buttonTitle="Save" onPress={() => setModalVisible(true)} style={styles.ButtonStyle} />
+                <props.RenderComp setModalVisible={setModalVisible} />
             </KeyboardAvoidingView>
         </TouchableWithoutFeedback>
     );

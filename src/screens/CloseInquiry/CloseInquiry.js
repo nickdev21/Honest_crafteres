@@ -61,7 +61,11 @@ const CloseInquiry = () => {
                         <CommonInput InputHeader={'Inquiry ID'} PalceHolder={'Type here'} />
                     </View>
                     <View style={styles.BottomCTA} >
-                        <PaymentSuccessModal data={PopUpData} />
+                        <PaymentSuccessModal data={PopUpData} RenderComp={(props) => (
+                            <>
+                                <FormButton buttonTitle="Save" onPress={() => props?.setModalVisible(true)} style={styles.ButtonStyle} />
+                            </>
+                        )} />
                     </View>
                 </View>
             </>
@@ -143,9 +147,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    ButtonStyle: {
-        width: '92%',
-    },
     UpperMainText: {
         color: colors.WelcomeCardText,
         fontSize: 14,
@@ -221,5 +222,8 @@ const styles = StyleSheet.create({
         fontFamily: fonts.PoppinsBold,
         textAlign: 'center',
         marginVertical: 10,
+    },
+    ButtonStyle: {
+        width: '95%',
     },
 });

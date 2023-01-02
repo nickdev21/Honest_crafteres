@@ -11,6 +11,7 @@ import NavigationStrings from '../../routes/NavigationStrings';
 
 const InquiryCardRes = ({ data }) => {
 
+    // {/* <Pressable style={styles.InqWcardWrapper} onPress={() => { navigation.navigate(NavigationStrings.CLOSE_INQUIRY) }} > */}
     const navigation = useNavigation()
     const { item, index } = data;
     return (

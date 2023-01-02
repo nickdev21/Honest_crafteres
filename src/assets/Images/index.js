@@ -6,6 +6,7 @@ export default {
     inquiPNG: require('../Images/inqui.png'),
     orderPNG: require('../Images/order.png'),
     paymentPNG: require('../Images/payment.png'),
+    PendingpaymentPNG: require('../Images/PendingPayment.png'),
     DicePNG: require('../Images/Dice.png'),
     QcEDPNG: require('../Images/QcED.png'),
     mailPNG: require('../Images/mail.png'),
@@ -14,7 +15,9 @@ export default {
     InvoiceGreenBackground: require('../Images/InvoiceGreenBack.png'),
     InvoiceGif: require('../Images/Invoice.gif'),
     ItemGif: require('../Images/Items.gif'),
-    PaymentGif: require('../Images/Payment.gif'),
+    PaymentGif: require('../Images/PaymentsGif.gif'),
     ServiceGif: require('../Images/Service.gif'),
     ServiceDetailGif: require('../Images/ServiceDetail.gif'),
+
+    PurseImage: require('../Images/PursePng.png'),
 };

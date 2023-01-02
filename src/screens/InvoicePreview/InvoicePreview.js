@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
-import { View, Text, StyleSheet, Image, ImageBackground, FlatList, ScrollView } from 'react-native';
-import React from 'react';
+import { View, Text, StyleSheet, Image, ImageBackground, FlatList, ScrollView, Pressable } from 'react-native';
+import React, { useRef } from 'react';
 import { colors } from '../../assets/colors';
 import CommonHeader from '../../component/Headers/CommonHeader';
 import Images from '../../assets/Images';
@@ -10,11 +10,15 @@ import VacantButton from '../../component/Buttons/VacantButton';
 import FormButton from '../../component/FormButton';
 import NavigationStrings from '../../routes/NavigationStrings';
 import { useNavigation } from '@react-navigation/native';
-import { FULL_HC_ICON_Icon, PayPal_Icon } from '../../assets/Icons';
+import { ClosePopUp_Icon, FULL_HC_ICON_Icon, MailSend_Icon, PayPal_Icon, ShareSend_Icon, WhatsAppSend_Icon } from '../../assets/Icons';
+import { ShowCustomFlashMessage } from '../../component/FlashMessage/FlashMessage';
+import BottomSheet from '../../component/BottomSheet/BottomSheet';
 
 const InvoicePreview = () => {
 
     const navigation = useNavigation()
+    const ChatBottomSheet = useRef();
+
     const InvoiceHeaderData = {
         HeaderTitile: 'Invoice Preview',
     };
@@ -131,7 +135,8 @@ const InvoicePreview = () => {
                 </View>
                 <View style={styles.TextView} >
                     <Text style={styles.InvoiceCardLeftText} >Payment Mode</Text>
-                    <PayPal_Icon width={'12%'} height={'90%'} />
+                    {/* <PayPal_Icon width={'12%'} height={'90%'} /> */}
+                    <PayPal_Icon width={windowWidth / 10} height={windowHeight / 35} />
                 </View>
                 <View style={styles.TextView} >
                     <Text style={styles.InvoiceCardLeftText} >Payment Status</Text>
@@ -140,6 +145,35 @@ const InvoicePreview = () => {
             </>
         );
     };
+
+
+
+    const RenderBottomSheet = () => {
+
+        return (
+            <>
+                <View style={styles.BottomSheetWrapper} >
+                    <Pressable onPress={() => { ChatBottomSheet.current.close(); }} style={styles.closePopUp} >
+                        <ClosePopUp_Icon width={'10%'} height={'100%'} />
+                    </Pressable>
+                    <View style={styles.IconsArea} >
+                        <View style={styles.IconText} >
+                            <ShareSend_Icon width={'100%'} height={'50%'} />
+                            <Text style={styles.IconDownText} >Send Service Details HCI1234-QTN via</Text>
+                        </View>
+                        <View style={styles.TwoIcon} >
+                            <MailSend_Icon width={'20%'} height={'75%'} />
+                            <WhatsAppSend_Icon width={'20%'} height={'75%'} />
+                        </View>
+                    </View>
+                    <View style={styles.ButtonArea} >
+                        <FormButton buttonTitle="Send" onPress={() => { ShowCustomFlashMessage('Invoice HCI1234-INV Sent !'); ChatBottomSheet.current.close(); }} style={styles.ButtonStyle} />
+                    </View>
+                </View>
+            </>
+        );
+    };
+
 
 
 
@@ -206,10 +240,11 @@ const InvoicePreview = () => {
 
                         </View>
                         <View style={styles.ButtonView} >
-                            <VacantButton buttonTittle={'Download'} SCREEN_NAME={NavigationStrings.INVOICE_PREVIEW} />
-                            <FormButton buttonTitle="Send Invoice Details" onPress={() => navigation.navigate(NavigationStrings.COLLECT_PAYMENT)} style={styles.ButtonStyle} />
+                            <VacantButton buttonTittle={'Download'} onPress={() => ShowCustomFlashMessage('Invoice HCI1234-INV Downloaded !')} />
+                            <FormButton buttonTitle="Send Invoice Details" onPress={() => ChatBottomSheet.current.open()} style={styles.ButtonStyle} />
                         </View>
                     </ScrollView>
+                    <BottomSheet reference={ChatBottomSheet} BSheight={windowHeight / 2.5} RenderComp={RenderBottomSheet} />
                 </>
                 }
                 renderItem={() => {
@@ -252,8 +287,8 @@ const styles = StyleSheet.create({
         shadowRadius: 20,
         shadowOpacity: 0.25,
     },
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
+    // borderTopLeftRadius: 30,
+    // borderTopRightRadius: 30,
     UpperCardArea: {
         borderTopLeftRadius: 10,
         borderTopRightRadius: 10,
@@ -364,7 +399,7 @@ const styles = StyleSheet.create({
     },
     InvoiceCardLeftText: {
         // backgroundColor: 'pink',
-        color: colors.CaptionGrey,
+        color: colors.lowerGrey,
         fontSize: 12,
         lineHeight: 21,
         fontFamily: fonts.PoppinsMedium,
@@ -380,7 +415,7 @@ const styles = StyleSheet.create({
     InvoiceCardRightText: {
         // backgroundColor: 'beige',
         color: colors.WelcomeCardText,
-        fontSize: 12,
+        fontSize: 14,
         lineHeight: 21,
         fontFamily: fonts.PoppinsMedium,
         width: '45%',
@@ -538,7 +573,7 @@ const styles = StyleSheet.create({
         // backgroundColor: 'red',
     },
     InvoiceCardLeftFourText: {
-        color: colors.CaptionGrey,
+        color: colors.lowerGrey,
         fontSize: 12,
         lineHeight: 21,
         fontFamily: fonts.PoppinsMedium,
@@ -589,5 +624,50 @@ const styles = StyleSheet.create({
     ButtonStyle: {
         width: '95%',
         alignSelf: 'center',
+    },
+    BottomSheetWrapper: {
+        // backgroundColor: 'yellow',
+        flex: 1,
+    },
+    closePopUp: {
+        height: '15%',
+        width: '100%',
+        paddingVertical: 10,
+        position: 'absolute',
+        // backgroundColor: 'red',
+        justifyContent: 'center',
+        alignItems: 'flex-end',
+        zIndex: 5,
+    },
+    IconsArea: {
+        // backgroundColor: 'pink',
+        height: '75%',
+    },
+    IconText: {
+        // backgroundColor: 'beige',
+        height: '70%',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+    },
+    IconDownText: {
+        color: colors.WelcomeCardText,
+        // backgroundColor: 'red',
+        // width: '50%',
+        fontSize: 16,
+        // lineHeight: 14,
+        fontFamily: fonts.PoppinsSemiBold,
+    },
+    ButtonArea: {
+        // backgroundColor: 'red',
+        height: '25%',
+    },
+    TwoIcon: {
+        // backgroundColor: 'green',
+        height: '30%',
+        width: '100%',
+        flexDirection: 'row',
+        selfAlign: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 });

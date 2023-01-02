@@ -6,9 +6,13 @@ import Images from '../../assets/Images';
 import fonts from '../../assets/fonts';
 import { HomeInq_Icon, PayPal_Icon, ReceiptTitile_Icon } from '../../assets/Icons';
 import { windowHeight, windowWidth } from '../../utils/Dimension';
+import { useNavigation } from '@react-navigation/native';
+import NavigationStrings from '../../routes/NavigationStrings';
 
-const ItemServices = () => {
+const ItemServices = (props) => {
 
+
+    const navigation = useNavigation()
 
     const ItemStaticData = [
         { id: 1, ItemCode: 'HCI1234-ORD-(1-1)', ProductName: 'XYZ HAND BAG', ServiceName: 'Deep Cleaning', Description: 'Loreum ispum is dummy text. Loreum ispum is dummy text', Qty: 1, SingleAmount: '100.00', TotalAmount: `100.00` },
@@ -57,16 +61,16 @@ const ItemServices = () => {
 
 
     return (
-        <Pressable style={styles.InvoiceDetailCardWrapper} >
+        <Pressable style={styles.InvoiceDetailCardWrapper} onPress={() => navigation.navigate(NavigationStrings.ITEM_DETAILS)} >
             <ImageBackground imageStyle={styles.ImageRadius} style={styles.UpperCardArea} source={Images.InvoiceGreenBackground} resizeMode="cover"  >
                 <Text style={styles.CardTitle} >Item & Services (2)</Text>
                 <View style={styles.IconStyle} >
-                    <Image style={styles.imageView} source={Images.ItemGif} />
+                    <Image style={styles.imageView} source={props?.GIF_Type ? props?.GIF_Type : Images.ItemGif} />
                     {/* <ReceiptTitile_Icon width={'100%'} height={'70%'} /> */}
                 </View>
             </ImageBackground>
             <View style={styles.DownCardArea} >
-                <FlatList  data={ItemStaticData} renderItem={RenderCard} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false} />
+                <FlatList data={ItemStaticData} renderItem={RenderCard} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false} />
             </View>
         </Pressable>
     );
@@ -82,7 +86,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         margin: '4%',
         marginBottom: '5%',
-        shadowColor: '#000',
+        shadowColor: colors.ShadowColor,
         elevation: 5,
         shadowOffset: {
             width: 0,

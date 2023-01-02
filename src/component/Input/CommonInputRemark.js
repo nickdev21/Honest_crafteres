@@ -6,48 +6,52 @@ import fonts from '../../assets/fonts';
 import { BackArrow_Icon, DownArrow_Icon } from '../../assets/Icons';
 import { windowHeight } from '../../utils/Dimension';
 
-const CommonInputRemark = (props) => {
+// const CommonInputRemark = (props) => {
+const CommonInputRemark = ({ InputHeader, mandatory, PalceHolder, numberOfLine, RunFunction, ...rest }) => {
 
     return (
         <View>
-            {props?.InputHeader ?
+            {InputHeader ?
                 <View style={styles.rowText} >
-                    <Text style={styles.TextStyle} >{props?.InputHeader}</Text>
-                    {props?.mandatory === true ?
+                    <Text style={styles.TextStyle} >{InputHeader}</Text>
+                    {mandatory === true ?
                         <Text style={styles.AstrikTextStyle} >*</Text>
                         : null
                     }
                 </View>
                 : null
             }
-            {Platform.OS === 'ios' ?
-                <TextInput
-                    style={styles.TextInputStyles}
-                    placeholder={props?.PalceHolder}
-                    // onChangeText={text => setnumberOfCarpets(text)}
-                    autoCorrect={false}
-                    // keyboardType='numeric'
-                    // editable={!disableEdit}
-                    autoCapitalize="none"
-                    maxLength={150}
-                    numberOfLines={props?.numberOfLine ? props?.numberOfLine : 4}
-                    multiline={true}
-                />
-                :
-                <TextInput
-                    style={styles.TextInputStyleAndroid}
-                    placeholder={props?.PalceHolder}
-                    // onChangeText={text => setnumberOfCarpets(text)}
-                    autoCorrect={false}
-                    // keyboardType='numeric'
-                    // editable={!disableEdit}
-                    autoCapitalize="none"
-                    maxLength={150}
-                    numberOfLines={props?.numberOfLine ? props?.numberOfLine : 4}
-                    multiline={true}
-                />
-
-            }
+            <Pressable onPress={() => { RunFunction ? RunFunction() : {}; }} >
+                {Platform.OS === 'ios' ?
+                    <TextInput
+                        style={styles.TextInputStyles}
+                        placeholder={PalceHolder}
+                        // onChangeText={text => setnumberOfCarpets(text)}
+                        autoCorrect={false}
+                        // keyboardType='numeric'
+                        // editable={!disableEdit}
+                        autoCapitalize="none"
+                        maxLength={150}
+                        numberOfLines={numberOfLine ? numberOfLine : 4}
+                        multiline={true}
+                        {...rest}
+                    />
+                    :
+                    <TextInput
+                        style={styles.TextInputStyleAndroid}
+                        placeholder={PalceHolder}
+                        // onChangeText={text => setnumberOfCarpets(text)}
+                        autoCorrect={false}
+                        // keyboardType='numeric'
+                        // editable={!disableEdit}
+                        autoCapitalize="none"
+                        maxLength={150}
+                        numberOfLines={numberOfLine ? numberOfLine : 4}
+                        multiline={true}
+                        {...rest}
+                    />
+                }
+            </Pressable>
         </View>
     );
 };

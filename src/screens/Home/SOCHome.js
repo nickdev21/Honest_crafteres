@@ -15,16 +15,17 @@ const SOCHome = () => {
 
     const cardArray = [{ id: '0', number: '105', title: 'Items in waiting for parts', progress: '', image: Images.DicePNG },
     { id: '1', number: 105, title: 'Inquiries', progress: '', image: Images.inquiPNG },
-    { id: '2', number: 26, title: 'Inspection Items', progress: '', image: Images.mailPNG },
+    { id: '2', number: 26, title: 'Assessment Items', progress: '', image: Images.mailPNG },
     { id: '3', number: 10, title: 'Items for QC-ed', progress: '', image: Images.QcEDPNG },
     { id: '4', number: `$${100}`, title: 'Payments', progress: '', image: Images.paymentPNG },
+    { id: '5', number: 15, title: 'Pending Payments', progress: '', image: Images.PendingpaymentPNG },
     ];
 
     const TileArray = [{ id: '0', SubTitle: 'View inquiries assigned to you.', title: 'Inquiry', Icon: INQ_Icon, SCREEN_NAME: NavigationStrings.INQUIRY_SCREEN },
     { id: '1', SubTitle: 'Manage customer accounts', title: 'Customer Accounts', Icon: Customer_Icon, SCREEN_NAME: NavigationStrings.CUSTOMER_ACCOUNT_SCREEN },
-    { id: '2', SubTitle: 'View item invoices details ', title: 'Invoices', Icon: Invoices_Icon, SCREEN_NAME: NavigationStrings.INQUIRY_SCREEN },
+    { id: '2', SubTitle: 'View item invoices details ', title: 'Invoices', Icon: Invoices_Icon, SCREEN_NAME: NavigationStrings.INVOICES_LIST },
+    { id: '4', SubTitle: 'View Inspection Items', title: 'Items For Assessment', Icon: Inspection_Icon, SCREEN_NAME: NavigationStrings.ASSESMENT_ITEMS },
     { id: '3', SubTitle: 'Assign orders for services', title: 'Assign Services', Icon: Assign_Icon, SCREEN_NAME: NavigationStrings.INQUIRY_SCREEN },
-    { id: '4', SubTitle: 'View Inspection Items', title: 'Items For Inspection', Icon: Inspection_Icon, SCREEN_NAME: NavigationStrings.INQUIRY_SCREEN },
     { id: '5', SubTitle: 'View item qc check', title: 'Items For QC', Icon: QC_Icon, SCREEN_NAME: NavigationStrings.INQUIRY_SCREEN },
     { id: '6', SubTitle: 'Request items for delivery from logistics team', title: 'Request Delivery', Icon: Delivery_Icon, SCREEN_NAME: NavigationStrings.INQUIRY_SCREEN },
     { id: '7', SubTitle: 'Update your profile details', title: 'Profile', Icon: Profile_Icon, SCREEN_NAME: NavigationStrings.INQUIRY_SCREEN },

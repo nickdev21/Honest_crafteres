@@ -7,14 +7,16 @@ import fonts from '../../assets/fonts';
 import { HomeInq_Icon, MobileIn_Icon, PayPal_Icon, ReceiptTitile_Icon, ShoeInq_Icon, WhatsappIn_Icon } from '../../assets/Icons';
 import { windowHeight, windowWidth } from '../../utils/Dimension';
 import InvoiceDetailCard from './InvoiceDetailCard';
-import InvoicesCard from './InvoicesCard';
+import { useNavigation } from '@react-navigation/native';
+import NavigationStrings from '../../routes/NavigationStrings';
 
 const PaymentCard = () => {
 
+    const navaigation = useNavigation()
 
 
     return (
-        <Pressable style={styles.InvoiceDetailCardWrapper} >
+        <Pressable style={styles.InvoiceDetailCardWrapper} onPress={() => { navaigation.navigate(NavigationStrings.PAYMENT_DETAILS) }} >
             <ImageBackground imageStyle={styles.ImageRadius} style={styles.UpperCardArea} source={Images.InvoiceGreenBackground} resizeMode="cover"  >
                 <Text style={styles.CardTitle} >Payments</Text>
                 <View style={styles.IconStyle} >

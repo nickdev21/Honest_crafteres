@@ -5,6 +5,7 @@ import React from 'react';
 import CommonHeader from '../../component/Headers/CommonHeader';
 import { colors } from '../../assets/colors';
 import InquiryTabs from './InquiryTabs';
+import SearchInput from '../../component/Input/SearchInput';
 
 const Inquiry = () => {
 
@@ -14,7 +15,7 @@ const Inquiry = () => {
     return (
         <View style={styles.SearchWrapper} >
             <CommonHeader data={InquiryHeaderData} />
-            {/* <SearchInput style={styles.ButtonStyles} /> */}
+            <SearchInput style={styles.ButtonStyles} />
             <InquiryTabs />
         </View>
     );

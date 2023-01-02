@@ -12,8 +12,11 @@ import { useNavigation } from '@react-navigation/native';
 import { Gallery_Icon, SuccesPayment_Icon } from '../../assets/Icons';
 import { windowHeight } from '../../utils/Dimension';
 import PaymentSuccessModal from '../../component/Modal/PaymentSuccessModal';
+import DropDown from '../../component/DropDowns/DropDown';
 
 const CollectPayment = () => {
+
+    const [ServiceType, setServiceType] = useState(false);
 
 
     const InvoiceHeaderData = {
@@ -26,13 +29,23 @@ const CollectPayment = () => {
         Icon: SuccesPayment_Icon, PopUpTittle: 'Payment for quotation iD HCI1234- QTN recorded successfully. ',
     }
 
+
+    const DropDownData = [
+        { ItemName: 'Cash On Delivery' },
+        { ItemName: 'Cheque' },
+        { ItemName: 'Pay Now' },
+        { ItemName: 'Paylah' },
+    ];
+
     return (
         <View style={styles.CollectPaymentWrapper} >
             <CommonHeader data={InvoiceHeaderData} />
             <ScrollView style={styles.CollectFormStyle} >
                 <Text style={styles.TextStyle} >Quotation ID</Text>
                 <Text style={styles.InvoiceCode} >HCI1234-QTN</Text>
-                <CommonInput InputHeader={'Payment Method'} PalceHolder={'Payment method'} mandatory={true} DownIcon={true} />
+                {/* <CommonInput InputHeader={'Payment Method'} PalceHolder={'Payment method'} mandatory={true} DownIcon={true} /> */}
+                <DropDown data={DropDownData} Value={'Bags'} stateFunction={setServiceType} InputHeader={'Payment Method'} mandatory={true} PalceHolder={'Payment method'} />
+
                 <CommonInput InputHeader={'Amount Collected'} PalceHolder={'Amount Collected'} mandatory={true} />
                 <CommonInputRemark InputHeader={'Remarks'} PalceHolder={'Remarks'} />
                 <CommonInput InputHeader={'Transaction ID'} PalceHolder={'Transaction ID'} mandatory={false} />
@@ -41,7 +54,12 @@ const CollectPayment = () => {
                     <Gallery_Icon width={'12%'} height={'75%'} />
                     <Text style={styles.AddIMagesText} >Add Images</Text>
                 </View>
-                <PaymentSuccessModal data={PopUpData} />
+                <PaymentSuccessModal data={PopUpData} RenderComp={(props) => {
+                    return (
+                        <>
+                            <FormButton buttonTitle="Save" onPress={() => props?.setModalVisible(true)} style={styles.ButtonStyle} />
+                        </>);
+                }} />
             </ScrollView>
         </View>
     );

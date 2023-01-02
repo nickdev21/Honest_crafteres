@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         // flexDirection: 'row',
     },
     ButtonStyles: {
-        width: '95%',
+        width: '90%',
     },
 
 });

@@ -5,6 +5,8 @@ import Routes from './src/routes';
 import { colors } from './src/assets/colors';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Splash, SplashMain } from './src/screens';
+import FlashMessage from 'react-native-flash-message';
+import { windowHeight } from './src/utils/Dimension';
 
 const App = () => {
   const [splash, setSplash] = useState(true);
@@ -20,6 +22,7 @@ const App = () => {
   return (
     <SafeAreaProvider style={styles.container}>
       {splash ? <SplashMain /> : <Routes />}
+      <FlashMessage animated position={'top'} style={styles.FlashMessageStyling} />
     </SafeAreaProvider>
   );
 };
@@ -30,5 +33,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     color: colors.primaryColor,
+  },
+  FlashMessageStyling: {
+    marginTop: windowHeight / 16,
   },
 });

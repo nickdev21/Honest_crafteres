@@ -6,14 +6,14 @@ import { windowHeight } from '../../utils/Dimension';
 
 const BottomSheet = (props) => {
 
-    const { RenderComp, reference } = props;
+    const { RenderComp, reference, BSheight } = props;
 
     return (
         <>
 
             <RBSheet
                 ref={reference}
-                height={windowHeight / 2}
+                height={BSheight ? BSheight : windowHeight / 2}
                 //   closeOnDragDown={true}
                 closeOnPressMask={true}
                 customStyles={{

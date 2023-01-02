@@ -6,10 +6,10 @@ import { colors } from '../../assets/colors';
 import fonts from '../../assets/fonts';
 import { useNavigation } from '@react-navigation/native';
 
-const VacantButton = ({ borderButton, buttonTittle, SCREEN_NAME }) => {
+const VacantButton = ({ borderButton, buttonTittle, SCREEN_NAME, RunFunction, ...rest }) => {
     const navigation = useNavigation()
     return (
-        <Pressable style={[borderButton ? styles.buttonWrap : styles.buttonWrapBorder]} onPress={() => { navigation.navigate(SCREEN_NAME) }}  >
+        <Pressable style={[borderButton ? styles.buttonWrap : styles.buttonWrapBorder]} onPress={() => { SCREEN_NAME ? navigation.navigate(SCREEN_NAME) : RunFunction() }}  {...rest}  >
             <Text style={[borderButton ? styles.buttonText : styles.buttonTextBorder]} >{buttonTittle}</Text>
         </Pressable>
     );
