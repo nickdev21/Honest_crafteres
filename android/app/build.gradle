@@ -1,5 +1,4 @@
 apply plugin: "com.android.application"
-
 import com.android.build.OutputFile
 import org.apache.tools.ant.taskdefs.condition.Os
 
@@ -282,6 +281,9 @@ dependencies {
 
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation platform('com.google.firebase:firebase-bom:31.1.1')
+
+    implementation 'com.google.firebase:firebase-analytics'
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 

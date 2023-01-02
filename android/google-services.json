@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "455038435727",
+    "project_id": "honest-crafters-9f301",
+    "storage_bucket": "honest-crafters-9f301.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:455038435727:android:5fb9957f0e2b7f9d764bfa",
+        "android_client_info": {
+          "package_name": "com.honest_crafter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "455038435727-jle5mh11mf8pilhio4upj8kgo3sjjk5q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADSnw4_KsBsz6631_ZJFMBqh51UchUvLU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "455038435727-jle5mh11mf8pilhio4upj8kgo3sjjk5q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
